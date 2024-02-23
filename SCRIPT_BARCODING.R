@@ -42,8 +42,7 @@ best3_taxons_fun <- function(x) {
 
 ## get the taxons:
 results.best <- best_taxon_fun(seq.raw) ## if there's an error or timeout, split your seq.raw into smaller parts of ~200 samples:
-# seq.raw1 <- seq.raw[1:200,]
-# seq.raw2 <- seq.raw[201:400,]
+#results.best <- lapply(list(seq.raw[1:200,], seq.raw[201:400,], seq.raw[401:600,], seq.raw[601:nrow(seq.raw),]), best_taxon_fun) %>% bind_rows() #each element in the list is raw.seq split by rows
 
 results.3best <- best3_taxons_fun(seq.raw)
 
